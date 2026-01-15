@@ -1,95 +1,93 @@
-import unittest
-import os
-import csv
+"""
+In-Class Practice: Structured Data and Strings
 
-def load_results(f):
-    '''
-    Params: 
-        f, name or path or CSV file: string
+You will work through this file during class.
+Run your code often.
+Do not delete existing data structures.
+"""
 
-    Returns:
-        nested dict structure from csv
-        outer keys are (str) races, values are dicts
-        inner keys are (str) horse, values are (str) race times
-    
-    Note: Don't strip or otherwise modify strings. Don't change datatypes from strings. 
-    '''
-    
-    base_path = os.path.abspath(os.path.dirname(__file__))
-    full_path = os.path.join(base_path, f)
-    # use this 'full_path' variable as the file that you open
+# --------------------------------------------------
+# Part 1: Given Data
+# --------------------------------------------------
 
-    pass
+movies = [
+    {
+        "title": "inception",
+        "year": 2010,
+        "ratings": [9, 8, 9]
+    },
+    {
+        "title": "the matrix",
+        "year": 1999,
+        "ratings": [10, 9, 10]
+    }
+]
 
-        
-def get_horse_results(d):
-    '''
-    Params:
-        d, dict created by load_csv above
+# --------------------------------------------------
+# Part 2: Extracting Data
+# --------------------------------------------------
+# Create variables for the following:
+# - first_title
+# - second_year
+# - first_ratings
+# - last_rating
 
-    Returns:
-        list of tuples, each with 3 items: race (str), horse (str), and fastest time (int) 
-        max is the maximum value of speed for a horse in that race, horse is the corresponding horse with that time
-
-    Note: Don't strip or otherwise modify strings. Do not change datatypes except where necessary.
-        TIP: You will need to modify time to a float. 
-    '''
-    
-    pass
-        
+# Write your code below
 
 
-def get_avg_speed(d):
-    '''
-    Params: 
-        d, dict created by load_csv above
-
-    Returns:
-        dict where keys are races and vals are floats rounded to nearest whole number
-        vals are the average values for all horses in the race
-
-    Note: Don't strip or otherwise modify strings. Do not change datatypes except where necessary. 
-        TIP: You'll have to use the round function for your average.
-    '''
-    pass
-        
-            
-
-class dis7_test(unittest.TestCase):
-    '''
-    you should not change these test cases!
-    '''
-    def setUp(self):
-        self.race_dict = load_results('race_results.csv')
-        self.max_tup_list = get_horse_results(self.race_dict)
-        self.avg_dict = get_avg_speed(self.race_dict)
-
-    def test_load_csv(self):
-        # Outer keys are races
-        self.assertIsInstance(self.race_dict['Tenno Sho Fall'], dict)
-        # Check one horse's time
-        self.assertEqual(self.race_dict['Teio Sho']['Symboli_Rudolf'], '14.8')
-
-    def test_get_horse_results(self):
-        # Max horse per race
-        expected = [
-            ('Tenno Sho Fall', 'Silence_Suzuka', 17.2),
-            ('Tenno Sho Spring', 'Silence_Suzuka', 17.5),
-            ('Teio Sho', 'Silence_Suzuka', 17.8)
-        ]
-        self.assertEqual(self.max_tup_list, expected)
-
-    def test_get_avg_speed(self):
-        # Average times rounded to nearest integer
-        avg_times = get_avg_speed(self.race_dict)
-        self.assertEqual(avg_times['Tenno Sho Fall'], round(
-            sum([16.5, 17.2, 16.9, 16.1, 16.8, 16.3, 17, 16.7, 16.4, 16.6, 15.5, 15.2])/12))
-        self.assertEqual(avg_times['Teio Sho'], round(
-            sum([17, 17.8, 17.3, 16.5, 17, 16.7, 17.4, 17, 16.8, 17.1, 15.9, 14.8])/12))
 
 
-def main():
-    unittest.main(verbosity=2)
+# --------------------------------------------------
+# Part 3: Updating Nested Data
+# --------------------------------------------------
+# Update the existing data:
+# 1. Change the year of the first movie to 2011
+# 2. Add a rating of 10 to the second movie
+# 3. Change the title of the second movie to "The Matrix Reloaded"
 
-if __name__ == '__main__':
-    main()
+# Write your code below
+
+
+
+
+# --------------------------------------------------
+# Part 4: Working with Strings
+# --------------------------------------------------
+# Create a variable named clean_title that:
+# - uses the first movie's title
+# - removes extra spaces (if any)
+# - converts the title to title case
+
+# Write your code below
+
+
+
+
+# --------------------------------------------------
+# Part 5: String Slicing (Bookends)
+# --------------------------------------------------
+# Create a variable named bookends that contains:
+# - the first character of clean_title
+# - the last character of clean_title
+
+# Write your code below
+
+
+
+
+# --------------------------------------------------
+# Part 6: Formatting a Summary String
+# --------------------------------------------------
+# Create a variable named summary with this format:
+# Movie: Inception (2011)
+#
+# Use values from the data structure.
+# Do not hard-code the final string.
+
+# Write your code below
+
+
+
+
+# Optional: print summary to check your work
+# print(summary)
